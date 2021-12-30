@@ -1,0 +1,97 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="header-bar">
+    <h1>Register</h1>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <label>{{form.username.label}}</label>
+        {{form.username}}
+
+        <label>{{form.password1.label}}</label>
+        {{form.password1}}
+
+        <label>{{form.password2.label}}</label>
+        {{form.password2}}
+        <input style="margin-top:10px ;" class="button" type="submit" value="Register">
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+
+    <h1> WHAT IS HADOOP? </h1>
+    <p> Hadoop is a framework that is used for batch or offline processing through a web of diffrent devices
+        and computers to form a clustr. Hadoop is a software to handle big data and organize them more quickly 
+        and effeciently  </p>
+
+        <img src=" {% static 'base/images/Hadoop.png' %} " width = "450" height = "120" alt="">
+
+    <h1> WHAT ARE THE COMPONENTS OF HADOOP? </h1>
+
+    <p> There are 3 components of Hadoop which are HADOOP DISTRIBUTED FILE SYSTEM (HDFS), MAP REDUCE, YARN </p>
+
+    <h1> HADOOP DISTRIBUTED FILE SYSTEM (HDFS) </h1>
+
+    <p> The use of HDFS is to store chunks of data into different storages in order for it to become effecient 
+        and does not need very large capacity to store them this method is called the Hadoop cluster. It is designed 
+        to work on commodity Gardware Devices, which are easy to find and are not expensive that works on HDFS
+        
+        HDFS can handle very large size data with high velocity and variety, making itt effecient and reliable. 
+        It is also to access to all components. Each data block can handle 128mb of data bat can also be configurable</p>
+
+    <img src=" {% static 'base/images/HDFS.png' %} " width = "500" height = "250" alt="">
+
+    <h1> MAP REDUCE  </h1>
+
+    <p> Is a programming model used to distribute the processing in parallel in a Hadoop Cluster. When dealing 
+        with data, Map Reduce uses 2 phases Map Task and Reduce Task </p>
+
+    <h2> Map Task </h2>
+
+    <p>  Map Tasks, takes the gathered data and counts the data and analyses the value of each data,
+        this way it shows the values of all data that has been gathered. </p>
+
+    <h2> Map Reduce </h2>
+
+    <p>  If there are different kinds of data, what Map Task does is it organizes the data into its same category 
+            arranging the data into groups where they are the same or in category. </p>
+
+    <img src=" {% static 'base/images/MAPREDUCE.jpg' %} " width = "500" height = "250" alt="">
+
+    <h1> YARN  </h1>
+
+    <p> YARN  allows different data processing engines like graph processing, interactive processing, stream processing as well as batch processing to run and process data stored 
+        in HDFS (Hadoop Distributed File System) thus making the system much more efficient. Through its various components, it can dynamically allocate various resources and schedule the 
+        application processing. For large volume data processing, it is quite necessary to manage the available resources properly so that every application can leverage them.
+
+    </p>
+
+    <img src=" {% static 'base/images/YARN1.jpg' %} " width = "500" height = "250" alt="">
+    <img src=" {% static 'base/images/YARN2.jpg' %} " width = "500" height = "250" alt="">
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+        
+
+    
+
+
+</div>
+
+
+
+
+{% endblock content %}
